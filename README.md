@@ -8,10 +8,7 @@ Built on **RAG (Retrieval-Augmented Generation)** and persistent vector memory, 
 ---
 
 ## 🧠 Why Pixel?
-
-Most AI assistants forget everything.
-
-Pixel doesn’t.
+Pixel doesn’t forget.
 
 She remembers:
 
@@ -137,4 +134,4 @@ She’s an attempt to build:
 ## 🧑‍💻 Author
 
 **Mohi (Mohd Talib)**
-Building local-first digital intelligence on an IdeaPad 🚀
+Building local digital intelligence on an IdeaPad 🚀
