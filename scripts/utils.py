@@ -1,22 +1,21 @@
 import sys
 import time
-from functools import wraps
+from typing import Callable, Any
 
-def fix_sqlite():
-    """Swaps standard sqlite3 for pysqlite3 for Ubuntu 20.04 compatibility."""
+def fix_sqlite() -> None:
+    """Redirects sqlite3 to pysqlite3 for Ubuntu 20.04 compatibility."""
     try:
-        import pysqlite3
-        sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+        __import__('pysqlite3')
+        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
     except ImportError:
         pass
 
-def track_time(func):
-    """Measures how long Pixel takes to 'think'."""
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
+def track_time(func: Callable) -> Callable:
+    """Decorator to measure how long the AI takes to think."""
+    def wrapper(*args, **kwargs) -> Any:
+        start = time.perf_counter()
         result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"⏱️  (Pixel thought for {end_time - start_time:.2f} seconds)")
+        end = time.perf_counter()
+        print(f"⏱️  (Thought for {end - start:.2f} seconds)")
         return result
     return wrapper
