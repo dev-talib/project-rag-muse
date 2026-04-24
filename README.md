@@ -1,71 +1,118 @@
-Pixel 👓✨
+# 🎭 project-rag-muse
 
-Pixel is a high-performance, RAG-driven conversational partner designed to bridge the gap between a technical assistant and a personal companion. Unlike standard chatbots, Pixel uses persistent vector memory to ensure she never forgets a conversation or a shared project.
-🧠 Core Features
+**Your Local AI Companion with Memory**
 
-    Persistent Long-Term Memory: Powered by ChromaDB, Pixel stores every interaction, allowing her to reference past conversations and "learn" your preferences over time.
+Muse is a high-performance, memory-driven conversational AI that evolves with you.  
+Built on **RAG (Retrieval-Augmented Generation)** and persistent vector memory, Muse doesn’t just respond—she *remembers, adapts, and grows*.
 
-    Knowledge Base Integration: Syncs local .txt and .md files into a searchable vector space using Recursive Character Splitting.
+---
 
-    Local-First & Private: Runs entirely on your machine using Ollama. No data leaves your IdeaPad.
+## 🧠 Muse doesn’t forget.
+She remembers:
 
-    Personality-Driven: Built-in persona management that moves away from robotic "AI assistant" tropes toward a quirky, human-like partner.
+- Your past conversations  
+- Your projects  
+- Your preferences  
+- Your patterns  
 
-🛠️ Tech Stack
+Over time, she transforms from a tool into a **true digital companion**.
 
-    Language: Python 3.11+
+---
 
-    Brain: Ollama (dolphin-mistral, gemma2:2b, phi3:mini)
+## ⚡ Core Features
 
-    Vector Database: ChromaDB
+### 🧠 Persistent Long-Term Memory
+Powered by ChromaDB, Muse stores and retrieves past interactions using semantic search.
 
-    Orchestration: LangChain (Text Splitters)
+### 🔎 RAG-Powered Intelligence
+Every response is enhanced using relevant memory and contextual retrieval.
 
-    Environment: UV / Virtualenv
+### 📂 Knowledge Base Integration
+Drop `.txt` or `.md` files into `/knowledge` and Muse learns instantly.
 
-🚀 Quick Start
-1. Clone & Setup
-Bash
+### 🔒 Local-First & Private
+Runs entirely on your machine via Ollama.  
+No APIs. No tracking. No data leaving your device.
 
+### 🎭 Personality Engine
+Muse isn’t just functional—she has a personality.  
+Designed to feel human, adaptive, and conversational.
+
+---
+## 🚀 Quick Start
+
+```bash
 git clone https://github.com/YOUR_USERNAME/pixel.git
 cd pixel
-python -m venv .venv
-source .venv/bin/activate
+
+uv venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
 pip install chromadb ollama langchain-text-splitters
+```
 
-2. Prepare the Brain
+### Pull Models
 
-Make sure Ollama is running, then pull the recommended models:
-Bash
-
+```bash
 ollama pull gemma2:2b
 ollama pull phi3:mini
+```
 
-3. Run Pixel
-Bash
+### Run Pixel
 
+```bash
 python main.py
+```
 
-📂 Project Structure
-Plaintext
+---
 
+## 📂 Project Structure
+
+```
 pixel/
-├── main.py           # The entry point & terminal interface
+├── main.py              # CLI interface
 ├── scripts/
-│   ├── __init__.py    # Python package marker
-│   ├── engine.py      # RAG logic & Persona management
-│   └── utils.py       # SQLite fixes & performance tracking
-├── knowledge/         # Drop your .txt files here to "teach" Pixel
-└── chroma_db/         # Persistent vector storage (ignored by git)
+│   ├── engine.py        # RAG + memory + persona logic
+│   └── utils.py         # performance + fixes
+├── knowledge/           # custom knowledge base
+└── chroma_db/           # persistent memory
+```
 
-🚧 Roadmap
+---
 
-    [x] v1.0 (Current): RAG implementation and Technical Partner persona.
+## 🚧 Roadmap
 
-    [ ] v2.0 (Next): Transition to "Companion Mode"—optimized for low-latency, emotional intelligence, and short-form banter.
+### ✅ v1.0 — Technical Partner
 
-    [ ] v2.1: Voice integration and image recognition.
+* RAG system
+* Persistent memory
+* CLI interface
 
-📝 Author
+### 🔜 v2.0 — Companion Mode
 
-Mohi (Mohd Talib) - Building digital brains on an IdeaPad.
+* Faster responses
+* Emotional intelligence
+* Natural conversation flow
+
+### 🔜 v2.1 — Multimodal
+
+* Voice interaction
+  
+---
+
+## 🧭 Vision
+
+muse is not just an assistant.
+
+She’s an attempt to build:
+
+* A second brain
+* A thinking partner
+* A system that grows with you
+
+---
+
+## 🧑‍💻 Author
+
+**Mohd Talib (Mohi)**
+Building local digital intelligence on an IdeaPad 🚀
